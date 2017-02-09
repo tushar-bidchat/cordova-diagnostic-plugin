@@ -35,23 +35,23 @@ var Diagnostic = (function(){
         "GRANTED_WHEN_IN_USE": "authorized_when_in_use" //  User granted access use location permission only when app is in use
     };
 
-    Diagnostic.locationAuthorizationMode = {
-        "ALWAYS": "always",
-        "WHEN_IN_USE": "when_in_use"
-    };
+    // Diagnostic.locationAuthorizationMode = {
+    //     "ALWAYS": "always",
+    //     "WHEN_IN_USE": "when_in_use"
+    // };
 
-    Diagnostic.bluetoothState = {
-        "UNKNOWN": "unknown",
-        "RESETTING": "resetting",
-        "UNSUPPORTED": "unsupported",
-        "UNAUTHORIZED": "unauthorized",
-        "POWERED_OFF": "powered_off",
-        "POWERED_ON": "powered_on"
-    };
+    // Diagnostic.bluetoothState = {
+    //     "UNKNOWN": "unknown",
+    //     "RESETTING": "resetting",
+    //     "UNSUPPORTED": "unsupported",
+    //     "UNAUTHORIZED": "unauthorized",
+    //     "POWERED_OFF": "powered_off",
+    //     "POWERED_ON": "powered_on"
+    // };
 
     // Placeholder listeners
-    Diagnostic._onBluetoothStateChange =
-        Diagnostic._onLocationStateChange = function(){};
+    // Diagnostic._onBluetoothStateChange =
+    //     Diagnostic._onLocationStateChange = function(){};
 
     /**********************
      *
@@ -94,13 +94,13 @@ var Diagnostic = (function(){
      * @param {Function} errorCallback -  The callback which will be called when operation encounters an error.
      * This callback function is passed a single string parameter containing the error message.
      */
-    Diagnostic.isLocationAvailable = function(successCallback, errorCallback) {
-        return cordova.exec(ensureBoolean(successCallback),
-            errorCallback,
-            'Diagnostic',
-            'isLocationAvailable',
-            []);
-    };
+    // Diagnostic.isLocationAvailable = function(successCallback, errorCallback) {
+    //     return cordova.exec(ensureBoolean(successCallback),
+    //         errorCallback,
+    //         'Diagnostic',
+    //         'isLocationAvailable',
+    //         []);
+    // };
 
     /**
      * Checks if the device location setting is enabled.
@@ -111,13 +111,13 @@ var Diagnostic = (function(){
      * @param {Function} errorCallback -  The callback which will be called when operation encounters an error.
      * This callback function is passed a single string parameter containing the error message.
      */
-    Diagnostic.isLocationEnabled = function(successCallback, errorCallback) {
-        return cordova.exec(ensureBoolean(successCallback),
-            errorCallback,
-            'Diagnostic',
-            'isLocationEnabled',
-            []);
-    };
+    // Diagnostic.isLocationEnabled = function(successCallback, errorCallback) {
+    //     return cordova.exec(ensureBoolean(successCallback),
+    //         errorCallback,
+    //         'Diagnostic',
+    //         'isLocationEnabled',
+    //         []);
+    // };
 
 
     /**
@@ -128,13 +128,13 @@ var Diagnostic = (function(){
      * @param {Function} errorCallback -  The callback which will be called when operation encounters an error.
      * This callback function is passed a single string parameter containing the error message.
      */
-    Diagnostic.isLocationAuthorized = function(successCallback, errorCallback) {
-        return cordova.exec(ensureBoolean(successCallback),
-            errorCallback,
-            'Diagnostic',
-            'isLocationAuthorized',
-            []);
-    };
+    // Diagnostic.isLocationAuthorized = function(successCallback, errorCallback) {
+    //     return cordova.exec(ensureBoolean(successCallback),
+    //         errorCallback,
+    //         'Diagnostic',
+    //         'isLocationAuthorized',
+    //         []);
+    // };
 
     /**
      * Returns the location authorization status for the application.
@@ -150,13 +150,13 @@ var Diagnostic = (function(){
      * @param {Function} errorCallback -  The callback which will be called when operation encounters an error.
      * This callback function is passed a single string parameter containing the error message.
      */
-    Diagnostic.getLocationAuthorizationStatus = function(successCallback, errorCallback) {
-        return cordova.exec(successCallback,
-            errorCallback,
-            'Diagnostic',
-            'getLocationAuthorizationStatus',
-            []);
-    };
+    // Diagnostic.getLocationAuthorizationStatus = function(successCallback, errorCallback) {
+    //     return cordova.exec(successCallback,
+    //         errorCallback,
+    //         'Diagnostic',
+    //         'getLocationAuthorizationStatus',
+    //         []);
+    // };
 
     /**
      * Requests location authorization for the application.
@@ -174,13 +174,13 @@ var Diagnostic = (function(){
      * @param {String} mode - (optional) location authorization mode as a constant in `cordova.plugins.diagnostic.locationAuthorizationMode`.
      * If not specified, defaults to `cordova.plugins.diagnostic.locationAuthorizationMode.WHEN_IN_USE`.
      */
-    Diagnostic.requestLocationAuthorization = function(successCallback, errorCallback, mode) {
-        return cordova.exec(successCallback,
-            errorCallback,
-            'Diagnostic',
-            'requestLocationAuthorization',
-            [mode && mode === Diagnostic.locationAuthorizationMode.ALWAYS]);
-    };
+    // Diagnostic.requestLocationAuthorization = function(successCallback, errorCallback, mode) {
+    //     return cordova.exec(successCallback,
+    //         errorCallback,
+    //         'Diagnostic',
+    //         'requestLocationAuthorization',
+    //         [mode && mode === Diagnostic.locationAuthorizationMode.ALWAYS]);
+    // };
 
     /**
      * Registers a function to be called when a change in Location state occurs.
@@ -193,9 +193,9 @@ var Diagnostic = (function(){
      * @param {Function} successCallback -  The callback which will be called when the Location state changes.
      * This callback function is passed a single string parameter indicating the new location authorisation status as a constant in `cordova.plugins.diagnostic.permissionStatus`.
      */
-    Diagnostic.registerLocationStateChangeHandler = function(successCallback) {
-        Diagnostic._onLocationStateChange = successCallback || function(){};
-    };
+    // Diagnostic.registerLocationStateChangeHandler = function(successCallback) {
+    //     Diagnostic._onLocationStateChange = successCallback || function(){};
+    // };
 
     /************
      * Camera   *
@@ -352,13 +352,13 @@ var Diagnostic = (function(){
      * @param {Function} errorCallback -  The callback which will be called when operation encounters an error.
      * This callback function is passed a single string parameter containing the error message.
      */
-    Diagnostic.isWifiAvailable = function(successCallback, errorCallback) {
-        return cordova.exec(ensureBoolean(successCallback),
-            errorCallback,
-            'Diagnostic',
-            'isWifiAvailable',
-            []);
-    };
+    // Diagnostic.isWifiAvailable = function(successCallback, errorCallback) {
+    //     return cordova.exec(ensureBoolean(successCallback),
+    //         errorCallback,
+    //         'Diagnostic',
+    //         'isWifiAvailable',
+    //         []);
+    // };
 
     /***************
      * Bluetooth   *
@@ -372,13 +372,13 @@ var Diagnostic = (function(){
      * @param {Function} errorCallback -  The callback which will be called when operation encounters an error.
      * This callback function is passed a single string parameter containing the error message.
      */
-    Diagnostic.isBluetoothAvailable = function(successCallback, errorCallback) {
-        return cordova.exec(ensureBoolean(successCallback),
-            errorCallback,
-            'Diagnostic',
-            'isBluetoothAvailable',
-            []);
-    };
+    // Diagnostic.isBluetoothAvailable = function(successCallback, errorCallback) {
+    //     return cordova.exec(ensureBoolean(successCallback),
+    //         errorCallback,
+    //         'Diagnostic',
+    //         'isBluetoothAvailable',
+    //         []);
+    // };
 
     /**
      * Returns the state of Bluetooth LE on the device.
@@ -388,13 +388,13 @@ var Diagnostic = (function(){
      * @param {Function} errorCallback -  The callback which will be called when operation encounters an error.
      * This callback function is passed a single string parameter containing the error message.
      */
-    Diagnostic.getBluetoothState = function(successCallback, errorCallback) {
-        return cordova.exec(successCallback,
-            errorCallback,
-            'Diagnostic',
-            'getBluetoothState',
-            []);
-    };
+    // Diagnostic.getBluetoothState = function(successCallback, errorCallback) {
+    //     return cordova.exec(successCallback,
+    //         errorCallback,
+    //         'Diagnostic',
+    //         'getBluetoothState',
+    //         []);
+    // };
 
 
     /**
@@ -406,9 +406,9 @@ var Diagnostic = (function(){
      * @param {Function} errorCallback -  The callback which will be called when the operation encounters an error.
      *  This callback function is passed a single string parameter containing the error message.
      */
-    Diagnostic.registerBluetoothStateChangeHandler = function(successCallback, errorCallback){
-        Diagnostic._onBluetoothStateChange = successCallback || function(){};
-    };
+    // Diagnostic.registerBluetoothStateChangeHandler = function(successCallback, errorCallback){
+    //     Diagnostic._onBluetoothStateChange = successCallback || function(){};
+    // };
 
     /**
      * Requests Bluetooth authorization for the application.
@@ -419,14 +419,14 @@ var Diagnostic = (function(){
      * @param {Function} errorCallback -  The callback which will be called when operation encounters an error.
      * This callback function is passed a single string parameter containing the error message.
      */
-    Diagnostic.requestBluetoothAuthorization = function(successCallback, errorCallback) {
-        return cordova.exec(
-            successCallback,
-            errorCallback,
-            'Diagnostic',
-            'requestBluetoothAuthorization',
-            []);
-    };
+    // Diagnostic.requestBluetoothAuthorization = function(successCallback, errorCallback) {
+    //     return cordova.exec(
+    //         successCallback,
+    //         errorCallback,
+    //         'Diagnostic',
+    //         'requestBluetoothAuthorization',
+    //         []);
+    // };
 
     /***************************
      * Microphone / Record Audio
@@ -498,13 +498,13 @@ var Diagnostic = (function(){
      * @param {Function} errorCallback -  The callback which will be called when operation encounters an error.
      * This callback function is passed a single string parameter containing the error message.
      */
-    Diagnostic.isRemoteNotificationsEnabled = function(successCallback, errorCallback) {
-        return cordova.exec(ensureBoolean(successCallback),
-            errorCallback,
-            'Diagnostic',
-            'isRemoteNotificationsEnabled',
-            []);
-    };
+    // Diagnostic.isRemoteNotificationsEnabled = function(successCallback, errorCallback) {
+    //     return cordova.exec(ensureBoolean(successCallback),
+    //         errorCallback,
+    //         'Diagnostic',
+    //         'isRemoteNotificationsEnabled',
+    //         []);
+    // };
 
     /**
      * Indicates the current setting of notification types for the app in the Settings app.
@@ -518,19 +518,19 @@ var Diagnostic = (function(){
      * @param {Function} errorCallback -  The callback which will be called when operation encounters an error.
      * This callback function is passed a single string parameter containing the error message.
      */
-    Diagnostic.getRemoteNotificationTypes = function(successCallback, errorCallback) {
-        return cordova.exec(function(sTypes){
-                var oTypes = JSON.parse(sTypes);
-                for(var type in oTypes){
-                    oTypes[type] = parseInt(oTypes[type]) === 1 ;
-                }
-                successCallback(oTypes);
-            },
-            errorCallback,
-            'Diagnostic',
-            'getRemoteNotificationTypes',
-            []);
-    };
+    // Diagnostic.getRemoteNotificationTypes = function(successCallback, errorCallback) {
+    //     return cordova.exec(function(sTypes){
+    //             var oTypes = JSON.parse(sTypes);
+    //             for(var type in oTypes){
+    //                 oTypes[type] = parseInt(oTypes[type]) === 1 ;
+    //             }
+    //             successCallback(oTypes);
+    //         },
+    //         errorCallback,
+    //         'Diagnostic',
+    //         'getRemoteNotificationTypes',
+    //         []);
+    // };
 
     /**
      * Indicates if the app is registered for remote notifications on the device.
@@ -544,13 +544,13 @@ var Diagnostic = (function(){
      * @param {Function} errorCallback -  The callback which will be called when operation encounters an error.
      * This callback function is passed a single string parameter containing the error message.
      */
-    Diagnostic.isRegisteredForRemoteNotifications = function(successCallback, errorCallback) {
-        return cordova.exec(ensureBoolean(successCallback),
-            errorCallback,
-            'Diagnostic',
-            'isRegisteredForRemoteNotifications',
-            []);
-    };
+    // Diagnostic.isRegisteredForRemoteNotifications = function(successCallback, errorCallback) {
+    //     return cordova.exec(ensureBoolean(successCallback),
+    //         errorCallback,
+    //         'Diagnostic',
+    //         'isRegisteredForRemoteNotifications',
+    //         []);
+    // };
 
     /*************
      * Contacts
@@ -564,13 +564,13 @@ var Diagnostic = (function(){
      * @param {Function} errorCallback -  The callback which will be called when operation encounters an error.
      * This callback function is passed a single string parameter containing the error message.
      */
-    Diagnostic.isContactsAuthorized = function(successCallback, errorCallback) {
-        return cordova.exec(ensureBoolean(successCallback),
-            errorCallback,
-            'Diagnostic',
-            'isAddressBookAuthorized',
-            []);
-    };
+    // Diagnostic.isContactsAuthorized = function(successCallback, errorCallback) {
+    //     return cordova.exec(ensureBoolean(successCallback),
+    //         errorCallback,
+    //         'Diagnostic',
+    //         'isAddressBookAuthorized',
+    //         []);
+    // };
 
     /**
      * Returns the contacts (address book) authorization status for the application.
@@ -580,13 +580,13 @@ var Diagnostic = (function(){
      * @param {Function} errorCallback -  The callback which will be called when operation encounters an error.
      * This callback function is passed a single string parameter containing the error message.
      */
-    Diagnostic.getContactsAuthorizationStatus = function(successCallback, errorCallback) {
-        return cordova.exec(successCallback,
-            errorCallback,
-            'Diagnostic',
-            'getAddressBookAuthorizationStatus',
-            []);
-    };
+    // Diagnostic.getContactsAuthorizationStatus = function(successCallback, errorCallback) {
+    //     return cordova.exec(successCallback,
+    //         errorCallback,
+    //         'Diagnostic',
+    //         'getAddressBookAuthorizationStatus',
+    //         []);
+    // };
 
     /**
      * Requests contacts (address book) authorization for the application.
@@ -598,15 +598,15 @@ var Diagnostic = (function(){
      * @param {Function} errorCallback -  The callback which will be called when operation encounters an error.
      * This callback function is passed a single string parameter containing the error message.
      */
-    Diagnostic.requestContactsAuthorization = function(successCallback, errorCallback) {
-        return cordova.exec(function(isGranted){
-                successCallback(isGranted ? Diagnostic.permissionStatus.GRANTED : Diagnostic.permissionStatus.DENIED);
-            },
-            errorCallback,
-            'Diagnostic',
-            'requestAddressBookAuthorization',
-            []);
-    };
+    // Diagnostic.requestContactsAuthorization = function(successCallback, errorCallback) {
+    //     return cordova.exec(function(isGranted){
+    //             successCallback(isGranted ? Diagnostic.permissionStatus.GRANTED : Diagnostic.permissionStatus.DENIED);
+    //         },
+    //         errorCallback,
+    //         'Diagnostic',
+    //         'requestAddressBookAuthorization',
+    //         []);
+    // };
 
     /*****************
      * Calendar events
@@ -620,13 +620,13 @@ var Diagnostic = (function(){
      * @param {Function} errorCallback -  The callback which will be called when operation encounters an error.
      * This callback function is passed a single string parameter containing the error message.
      */
-    Diagnostic.isCalendarAuthorized = function(successCallback, errorCallback) {
-        return cordova.exec(ensureBoolean(successCallback),
-            errorCallback,
-            'Diagnostic',
-            'isCalendarAuthorized',
-            []);
-    };
+    // Diagnostic.isCalendarAuthorized = function(successCallback, errorCallback) {
+    //     return cordova.exec(ensureBoolean(successCallback),
+    //         errorCallback,
+    //         'Diagnostic',
+    //         'isCalendarAuthorized',
+    //         []);
+    // };
 
     /**
      * Returns the calendar event authorization status for the application.
@@ -636,13 +636,13 @@ var Diagnostic = (function(){
      * @param {Function} errorCallback -  The callback which will be called when operation encounters an error.
      * This callback function is passed a single string parameter containing the error message.
      */
-    Diagnostic.getCalendarAuthorizationStatus = function(successCallback, errorCallback) {
-        return cordova.exec(successCallback,
-            errorCallback,
-            'Diagnostic',
-            'getCalendarAuthorizationStatus',
-            []);
-    };
+    // Diagnostic.getCalendarAuthorizationStatus = function(successCallback, errorCallback) {
+    //     return cordova.exec(successCallback,
+    //         errorCallback,
+    //         'Diagnostic',
+    //         'getCalendarAuthorizationStatus',
+    //         []);
+    // };
 
     /**
      * Requests calendar event authorization for the application.
@@ -654,15 +654,15 @@ var Diagnostic = (function(){
      * @param {Function} errorCallback -  The callback which will be called when operation encounters an error.
      * This callback function is passed a single string parameter containing the error message.
      */
-    Diagnostic.requestCalendarAuthorization = function(successCallback, errorCallback) {
-        return cordova.exec(function(isGranted){
-                successCallback(isGranted ? Diagnostic.permissionStatus.GRANTED : Diagnostic.permissionStatus.DENIED);
-            },
-            errorCallback,
-            'Diagnostic',
-            'requestCalendarAuthorization',
-            []);
-    };
+    // Diagnostic.requestCalendarAuthorization = function(successCallback, errorCallback) {
+    //     return cordova.exec(function(isGranted){
+    //             successCallback(isGranted ? Diagnostic.permissionStatus.GRANTED : Diagnostic.permissionStatus.DENIED);
+    //         },
+    //         errorCallback,
+    //         'Diagnostic',
+    //         'requestCalendarAuthorization',
+    //         []);
+    // };
 
     /*********************
      * Calendar reminders
@@ -676,13 +676,13 @@ var Diagnostic = (function(){
      * @param {Function} errorCallback -  The callback which will be called when operation encounters an error.
      * This callback function is passed a single string parameter containing the error message.
      */
-    Diagnostic.isRemindersAuthorized = function(successCallback, errorCallback) {
-        return cordova.exec(ensureBoolean(successCallback),
-            errorCallback,
-            'Diagnostic',
-            'isRemindersAuthorized',
-            []);
-    };
+    // Diagnostic.isRemindersAuthorized = function(successCallback, errorCallback) {
+    //     return cordova.exec(ensureBoolean(successCallback),
+    //         errorCallback,
+    //         'Diagnostic',
+    //         'isRemindersAuthorized',
+    //         []);
+    // };
 
     /**
      * Returns the calendar event authorization status for the application.
@@ -692,13 +692,13 @@ var Diagnostic = (function(){
      * @param {Function} errorCallback -  The callback which will be called when operation encounters an error.
      * This callback function is passed a single string parameter containing the error message.
      */
-    Diagnostic.getRemindersAuthorizationStatus = function(successCallback, errorCallback) {
-        return cordova.exec(successCallback,
-            errorCallback,
-            'Diagnostic',
-            'getRemindersAuthorizationStatus',
-            []);
-    };
+    // Diagnostic.getRemindersAuthorizationStatus = function(successCallback, errorCallback) {
+    //     return cordova.exec(successCallback,
+    //         errorCallback,
+    //         'Diagnostic',
+    //         'getRemindersAuthorizationStatus',
+    //         []);
+    // };
 
     /**
      * Requests calendar reminders authorization for the application.
@@ -710,15 +710,15 @@ var Diagnostic = (function(){
      * @param {Function} errorCallback -  The callback which will be called when operation encounters an error.
      * This callback function is passed a single string parameter containing the error message.
      */
-    Diagnostic.requestRemindersAuthorization = function(successCallback, errorCallback) {
-        return cordova.exec(function(isGranted){
-                successCallback(isGranted ? Diagnostic.permissionStatus.GRANTED : Diagnostic.permissionStatus.DENIED);
-            },
-            errorCallback,
-            'Diagnostic',
-            'requestRemindersAuthorization',
-            []);
-    };
+    // Diagnostic.requestRemindersAuthorization = function(successCallback, errorCallback) {
+    //     return cordova.exec(function(isGranted){
+    //             successCallback(isGranted ? Diagnostic.permissionStatus.GRANTED : Diagnostic.permissionStatus.DENIED);
+    //         },
+    //         errorCallback,
+    //         'Diagnostic',
+    //         'requestRemindersAuthorization',
+    //         []);
+    // };
 
     /*********************
      * Background refresh
@@ -732,13 +732,13 @@ var Diagnostic = (function(){
      * @param {Function} errorCallback -  The callback which will be called when operation encounters an error.
      * This callback function is passed a single string parameter containing the error message.
      */
-    Diagnostic.getBackgroundRefreshStatus = function(successCallback, errorCallback) {
-        return cordova.exec(successCallback,
-            errorCallback,
-            'Diagnostic',
-            'getBackgroundRefreshStatus',
-            []);
-    };
+    // Diagnostic.getBackgroundRefreshStatus = function(successCallback, errorCallback) {
+    //     return cordova.exec(successCallback,
+    //         errorCallback,
+    //         'Diagnostic',
+    //         'getBackgroundRefreshStatus',
+    //         []);
+    // };
 
     /**
      * Checks if the application is authorized for background refresh.
@@ -748,11 +748,11 @@ var Diagnostic = (function(){
      * @param {Function} errorCallback -  The callback which will be called when operation encounters an error.
      * This callback function is passed a single string parameter containing the error message.
      */
-    Diagnostic.isBackgroundRefreshAuthorized = function(successCallback, errorCallback) {
-        Diagnostic.getBackgroundRefreshStatus(function(status){
-            successCallback(status === Diagnostic.permissionStatus.GRANTED);
-        }, errorCallback);
-    };
+    // Diagnostic.isBackgroundRefreshAuthorized = function(successCallback, errorCallback) {
+    //     Diagnostic.getBackgroundRefreshStatus(function(status){
+    //         successCallback(status === Diagnostic.permissionStatus.GRANTED);
+    //     }, errorCallback);
+    // };
 
     /*************
      * Motion
@@ -766,13 +766,13 @@ var Diagnostic = (function(){
      * @param {Function} errorCallback -  The callback which will be called when operation encounters an error.
      * This callback function is passed a single string parameter containing the error message.
      */
-    Diagnostic.isMotionAvailable = function(successCallback, errorCallback) {
-        return cordova.exec(ensureBoolean(successCallback),
-            errorCallback,
-            'Diagnostic',
-            'isMotionAvailable',
-            []);
-    };
+    // Diagnostic.isMotionAvailable = function(successCallback, errorCallback) {
+    //     return cordova.exec(ensureBoolean(successCallback),
+    //         errorCallback,
+    //         'Diagnostic',
+    //         'isMotionAvailable',
+    //         []);
+    // };
 
     /**
      * Checks if it's possible to determine the outcome of a motion authorization request on the current device.
@@ -784,13 +784,13 @@ var Diagnostic = (function(){
      * @param {Function} errorCallback -  The callback which will be called when operation encounters an error.
      * This callback function is passed a single string parameter containing the error message.
      */
-    Diagnostic.isMotionRequestOutcomeAvailable = function(successCallback, errorCallback) {
-        return cordova.exec(ensureBoolean(successCallback),
-            errorCallback,
-            'Diagnostic',
-            'isMotionRequestOutcomeAvailable',
-            []);
-    };
+    // Diagnostic.isMotionRequestOutcomeAvailable = function(successCallback, errorCallback) {
+    //     return cordova.exec(ensureBoolean(successCallback),
+    //         errorCallback,
+    //         'Diagnostic',
+    //         'isMotionRequestOutcomeAvailable',
+    //         []);
+    // };
 
     /**
      * Requests and checks motion authorization for the application:
@@ -815,14 +815,14 @@ var Diagnostic = (function(){
      * @param {Function} errorCallback -  The callback which will be called when operation encounters an error.
      * This callback function is passed a single string parameter containing the error message.
      */
-    Diagnostic.requestAndCheckMotionAuthorization = function(successCallback, errorCallback) {
-        return cordova.exec(
-            successCallback,
-            errorCallback,
-            'Diagnostic',
-            'requestAndCheckMotionAuthorization',
-            []);
-    };
+    // Diagnostic.requestAndCheckMotionAuthorization = function(successCallback, errorCallback) {
+    //     return cordova.exec(
+    //         successCallback,
+    //         errorCallback,
+    //         'Diagnostic',
+    //         'requestAndCheckMotionAuthorization',
+    //         []);
+    // };
 
     return Diagnostic;
 })();
